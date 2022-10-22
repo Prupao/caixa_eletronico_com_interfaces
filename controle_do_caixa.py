@@ -62,57 +62,59 @@ def clean() -> None:
 def addNovasCedulas() -> None:
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3
     global qtdnewCed4, hasNewCed1, hasNewCed2, hasNewCed3, hasNewCed4
-    newBankNote = int(str(addCedulaQt.le_addCed.text()).isnumeric())
-    if newBankNote != 100 and newBankNote != 10 and newBankNote != 50:
-        if newBankNote == 200 or newBankNote == 5 or newBankNote == 2 or newBankNote == 20:
-            if newCed1 == 0 and newBankNote > 0:
-                newCed1 = newBankNote
-                qtdnewCed1 = 100
-                seeTheQtdOfTheNewCedOnQt(newCed1, qtdnewCed1)
-                makeTheNewCedAppearOnQt(newCed1)
-                saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1)
-                quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-                hasNewCed1 = True
-            elif newCed2 == 0 and newBankNote > 0 and newBankNote != newCed1:
-                newCed2 = newBankNote
-                qtdnewCed2 = 100
-                seeTheQtdOfTheNewCedOnQt(newCed2, qtdnewCed2)
-                saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
-                            newCed2 * qtdnewCed2)
-                quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-                makeTheNewCedAppearOnQt(newCed2)
-                hasNewCed2 = True
-            elif newCed3 == 0 and newBankNote > 0 and newCed1 != newBankNote != newCed2:
-                newCed3 = newBankNote
-                qtdnewCed3 = 100
-                seeTheQtdOfTheNewCedOnQt(newCed3, qtdnewCed3)
-                saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
-                            newCed2 * qtdnewCed2) + (newCed3 * qtdnewCed3)
-                quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-                makeTheNewCedAppearOnQt(newCed3)
-                hasNewCed3 = True
-            elif newCed4 == 0 and newCed2 != newBankNote > 0 and newCed1 != newBankNote != newCed3:
-                newCed4 = newBankNote
-                qtdnewCed4 = 100
-                seeTheQtdOfTheNewCedOnQt(newCed4, qtdnewCed4)
-                saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
-                            newCed2 * qtdnewCed2) + (newCed3 * qtdnewCed3) + (newCed4 * qtdnewCed4)
-                quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-                makeTheNewCedAppearOnQt(newCed4)
-                hasNewCed4 = True
-            else:
-                if newCed1 != 0 and newCed2 != 0 and newCed3 != 0 and newCed4 != 0:
-                    popUp3Qt.le_aviso.setText("Todas as cédulas existentes estão no caixa!")
-                    popUp3Qt.show()
+    newBankNote = int(addCedulaQt.le_addCed.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if newBankNote != 100 and newBankNote != 10 and newBankNote != 50:
+            if newBankNote == 200 or newBankNote == 5 or newBankNote == 2 or newBankNote == 20:
+                if newCed1 == 0 and newBankNote > 0:
+                    newCed1 = newBankNote
+                    qtdnewCed1 = 100
+                    seeTheQtdOfTheNewCedOnQt(newCed1, qtdnewCed1)
+                    makeTheNewCedAppearOnQt(newCed1)
+                    saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1)
+                    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+                    hasNewCed1 = True
+                elif newCed2 == 0 and newBankNote > 0 and newBankNote != newCed1:
+                    newCed2 = newBankNote
+                    qtdnewCed2 = 100
+                    seeTheQtdOfTheNewCedOnQt(newCed2, qtdnewCed2)
+                    saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
+                                newCed2 * qtdnewCed2)
+                    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+                    makeTheNewCedAppearOnQt(newCed2)
+                    hasNewCed2 = True
+                elif newCed3 == 0 and newBankNote > 0 and newCed1 != newBankNote != newCed2:
+                    newCed3 = newBankNote
+                    qtdnewCed3 = 100
+                    seeTheQtdOfTheNewCedOnQt(newCed3, qtdnewCed3)
+                    saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
+                                newCed2 * qtdnewCed2) + (newCed3 * qtdnewCed3)
+                    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+                    makeTheNewCedAppearOnQt(newCed3)
+                    hasNewCed3 = True
+                elif newCed4 == 0 and newCed2 != newBankNote > 0 and newCed1 != newBankNote != newCed3:
+                    newCed4 = newBankNote
+                    qtdnewCed4 = 100
+                    seeTheQtdOfTheNewCedOnQt(newCed4, qtdnewCed4)
+                    saldo = (qtdCedTen * 10) + (qtdCedFifty * 50) + (qtdCedOneHundred * 100) + (newCed1 * qtdnewCed1) + (
+                                newCed2 * qtdnewCed2) + (newCed3 * qtdnewCed3) + (newCed4 * qtdnewCed4)
+                    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+                    makeTheNewCedAppearOnQt(newCed4)
+                    hasNewCed4 = True
                 else:
-                    popUp3Qt.le_aviso.setText("Tente novamente!")
-                    popUp3Qt.show()
+                    if newCed1 != 0 and newCed2 != 0 and newCed3 != 0 and newCed4 != 0:
+                        popUp3Qt.le_aviso.setText("Todas as cédulas existentes estão no caixa!")
+                        popUp3Qt.show()
+                    else:
+                        popUp3Qt.le_aviso.setText("Tente novamente!")
+                        popUp3Qt.show()
+            else:
+                popUp3Qt.le_aviso.setText("Cédula não existe, tente novamente!")
+                popUp3Qt.show()
         else:
-            popUp3Qt.le_aviso.setText("Cédula não existe, tente novamente!")
+            popUp3Qt.le_aviso.setText("Cédula já existente no caixa")
             popUp3Qt.show()
-    else:
-        popUp3Qt.le_aviso.setText("Cédula já existente no caixa")
-        popUp3Qt.show()
 
 
 # A função Saque controla a quantidade de cédulas utilizadas em cada saque efetuado e avisa se necessário de erros
@@ -121,108 +123,110 @@ def saque() -> int:
     global totced10, totced50, totced100, qtdCedTen, qtdCedFifty, qtdCedOneHundred, saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     global totcedNew200, totcedNew20, totcedNew5, totcedNew2
-    withdrawValue = int(str(interface_do_caixaQt.le_digiteValor.text()).isnumeric())
+    withdrawValue = int(interface_do_caixaQt.le_digiteValor.text())
     total = withdrawValue
     ced100 = 100
     ced10 = 10
     ced50 = 50
-    if total >= 10 and withdrawValue <= saldo:
-        while True:
-            if total >= newCed1 == 200 and qtdnewCed1 > 0 or total >= newCed2 == 200 and qtdnewCed2 > 0 or total >= newCed3 == 200 and qtdnewCed3 > 0 or total >= newCed4 == 200 and qtdnewCed4 > 0:
-                if newCed1 == 200:
-                    total -= newCed1
-                    totcedNew200 += 1
-                    qtdnewCed1 -= 1
-                elif newCed2 == 200:
-                    total -= newCed2
-                    totcedNew200 += 1
-                    qtdnewCed2 -= 1
-                elif newCed3 == 200:
-                    total -= newCed3
-                    totcedNew200 += 1
-                    qtdnewCed3 -= 1
-                elif newCed4 == 200:
-                    total -= newCed4
-                    totcedNew200 += 1
-                    qtdnewCed4 -= 1
-            elif total >= ced100 and qtdCedOneHundred > 0:
-                total -= ced100
-                totced100 += 1
-                qtdCedOneHundred -= 1
-            elif total >= ced50 and qtdCedFifty > 0:
-                total -= ced50
-                totced50 += 1
-                qtdCedFifty -= 1
-            elif total >= newCed1 == 20 and qtdnewCed1 > 0 or total >= newCed2 == 20 and qtdnewCed2 > 0 or total >= newCed3 == 20 and qtdnewCed3 > 0 or total >= newCed4 == 20 and qtdnewCed4 > 0:
-                if newCed1 == 20:
-                    total -= newCed1
-                    totcedNew20 += 1
-                    qtdnewCed1 -= 1
-                elif newCed2 == 20:
-                    total -= newCed2
-                    totcedNew20 += 1
-                    qtdnewCed2 -= 1
-                elif newCed3 == 20:
-                    total -= newCed3
-                    totcedNew20 += 1
-                    qtdnewCed3 -= 1
-                elif newCed4 == 20:
-                    total -= newCed4
-                    totcedNew20 += 1
-                    qtdnewCed4 -= 1
-            elif total >= ced10 and qtdCedTen > 0:
-                total -= ced10
-                totced10 += 1
-                qtdCedTen -= 1
-            elif total >= newCed1 == 5 and qtdnewCed1 > 0 or total >= newCed2 == 5 and qtdnewCed2 > 0 or total >= newCed3 == 5 and qtdnewCed3 > 0 or total >= newCed4 == 5 and qtdnewCed4 > 0:
-                if newCed1 == 5:
-                    total -= newCed1
-                    totcedNew5 += 1
-                    qtdnewCed1 -= 1
-                elif newCed2 == 5:
-                    total -= newCed2
-                    totcedNew5 += 1
-                    qtdnewCed2 -= 1
-                elif newCed3 == 5:
-                    total -= newCed3
-                    totcedNew5 += 1
-                    qtdnewCed3 -= 1
-                elif newCed4 == 5:
-                    total -= newCed4
-                    totcedNew5 += 1
-                    qtdnewCed4 -= 1
-            elif total >= newCed1 == 2 and qtdnewCed1 > 0 or total >= newCed2 == 2 and qtdnewCed2 > 0 or total >= newCed3 == 2 and qtdnewCed3 > 0 or total >= newCed4 == 2 and qtdnewCed4 > 0:
-                if newCed1 == 2:
-                    total -= newCed1
-                    totcedNew2 += 1
-                    qtdnewCed1 -= 1
-                elif newCed2 == 2:
-                    total -= newCed2
-                    totcedNew2 += 1
-                    qtdnewCed2 -= 1
-                elif newCed3 == 2:
-                    total -= newCed3
-                    totcedNew2 += 1
-                    qtdnewCed3 -= 1
-                elif newCed4 == 2:
-                    total -= newCed4
-                    totcedNew2 += 1
-                    qtdnewCed4 -= 1
-            elif total == 0:
-                interface_do_caixaQt.le_qtd10.setText(str(totced10))
-                interface_do_caixaQt.le_qtd50.setText(str(totced50))
-                interface_do_caixaQt.le_qtd100.setText(str(totced100))
-                sendQtdOfNewCedUsedOnWithdrawToQT(totcedNew200, totcedNew20, totcedNew5, totcedNew2)
-                return withdrawValue
-            else:
-                if total != 0:
-                    popUp2Qt.show()
-                    popUp2Qt.le_aviso.setText('Valor indisponível, escreva um multiplo de 10')
-                return 0
-    else:
-        popUp2Qt.show()
-        popUp2Qt.le_aviso.setText('Valor indisponível, tente novamente')
-        return 0
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if total >= 10 and withdrawValue <= saldo:
+            while True:
+                if total >= newCed1 == 200 and qtdnewCed1 > 0 or total >= newCed2 == 200 and qtdnewCed2 > 0 or total >= newCed3 == 200 and qtdnewCed3 > 0 or total >= newCed4 == 200 and qtdnewCed4 > 0:
+                    if newCed1 == 200:
+                        total -= newCed1
+                        totcedNew200 += 1
+                        qtdnewCed1 -= 1
+                    elif newCed2 == 200:
+                        total -= newCed2
+                        totcedNew200 += 1
+                        qtdnewCed2 -= 1
+                    elif newCed3 == 200:
+                        total -= newCed3
+                        totcedNew200 += 1
+                        qtdnewCed3 -= 1
+                    elif newCed4 == 200:
+                        total -= newCed4
+                        totcedNew200 += 1
+                        qtdnewCed4 -= 1
+                elif total >= ced100 and qtdCedOneHundred > 0:
+                    total -= ced100
+                    totced100 += 1
+                    qtdCedOneHundred -= 1
+                elif total >= ced50 and qtdCedFifty > 0:
+                    total -= ced50
+                    totced50 += 1
+                    qtdCedFifty -= 1
+                elif total >= newCed1 == 20 and qtdnewCed1 > 0 or total >= newCed2 == 20 and qtdnewCed2 > 0 or total >= newCed3 == 20 and qtdnewCed3 > 0 or total >= newCed4 == 20 and qtdnewCed4 > 0:
+                    if newCed1 == 20:
+                        total -= newCed1
+                        totcedNew20 += 1
+                        qtdnewCed1 -= 1
+                    elif newCed2 == 20:
+                        total -= newCed2
+                        totcedNew20 += 1
+                        qtdnewCed2 -= 1
+                    elif newCed3 == 20:
+                        total -= newCed3
+                        totcedNew20 += 1
+                        qtdnewCed3 -= 1
+                    elif newCed4 == 20:
+                        total -= newCed4
+                        totcedNew20 += 1
+                        qtdnewCed4 -= 1
+                elif total >= ced10 and qtdCedTen > 0:
+                    total -= ced10
+                    totced10 += 1
+                    qtdCedTen -= 1
+                elif total >= newCed1 == 5 and qtdnewCed1 > 0 or total >= newCed2 == 5 and qtdnewCed2 > 0 or total >= newCed3 == 5 and qtdnewCed3 > 0 or total >= newCed4 == 5 and qtdnewCed4 > 0:
+                    if newCed1 == 5:
+                        total -= newCed1
+                        totcedNew5 += 1
+                        qtdnewCed1 -= 1
+                    elif newCed2 == 5:
+                        total -= newCed2
+                        totcedNew5 += 1
+                        qtdnewCed2 -= 1
+                    elif newCed3 == 5:
+                        total -= newCed3
+                        totcedNew5 += 1
+                        qtdnewCed3 -= 1
+                    elif newCed4 == 5:
+                        total -= newCed4
+                        totcedNew5 += 1
+                        qtdnewCed4 -= 1
+                elif total >= newCed1 == 2 and qtdnewCed1 > 0 or total >= newCed2 == 2 and qtdnewCed2 > 0 or total >= newCed3 == 2 and qtdnewCed3 > 0 or total >= newCed4 == 2 and qtdnewCed4 > 0:
+                    if newCed1 == 2:
+                        total -= newCed1
+                        totcedNew2 += 1
+                        qtdnewCed1 -= 1
+                    elif newCed2 == 2:
+                        total -= newCed2
+                        totcedNew2 += 1
+                        qtdnewCed2 -= 1
+                    elif newCed3 == 2:
+                        total -= newCed3
+                        totcedNew2 += 1
+                        qtdnewCed3 -= 1
+                    elif newCed4 == 2:
+                        total -= newCed4
+                        totcedNew2 += 1
+                        qtdnewCed4 -= 1
+                elif total == 0:
+                    interface_do_caixaQt.le_qtd10.setText(str(totced10))
+                    interface_do_caixaQt.le_qtd50.setText(str(totced50))
+                    interface_do_caixaQt.le_qtd100.setText(str(totced100))
+                    sendQtdOfNewCedUsedOnWithdrawToQT(totcedNew200, totcedNew20, totcedNew5, totcedNew2)
+                    return withdrawValue
+                else:
+                    if total != 0:
+                        popUp2Qt.show()
+                        popUp2Qt.le_aviso.setText('Valor indisponível, escreva um multiplo de 10')
+                    return 0
+        else:
+            popUp2Qt.show()
+            popUp2Qt.le_aviso.setText('Valor indisponível, tente novamente')
+            return 0
 
 
 # As três funções abaixo fazem os PopUp do sistema, quando as cédulas acabarem(todas, ou individualmente)
@@ -314,133 +318,147 @@ def main() -> None:
 # As 7 funções abaixo fazem as reposições das cédulas no sistema.
 def replenishTen() -> str:
     global qtdCedTen, saldo
-    qtdCedAdd = int(str(replenishBankNotesQt.le_repor10.text()).isnumeric())
-    qtdCedTen = qtdCedTen + qtdCedAdd
-    saldo = saldo + (qtdCedAdd * 10)
-    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-    return quantidadeDeNotasQt.le_qtd10.setText(str(qtdCedTen))
+    qtdCedAdd = int(replenishBankNotesQt.le_repor10.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        qtdCedTen = qtdCedTen + qtdCedAdd
+        saldo = saldo + (qtdCedAdd * 10)
+        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+        return quantidadeDeNotasQt.le_qtd10.setText(str(qtdCedTen))
 
 
 def replenishFifty() -> str:
     global qtdCedFifty, saldo
-    qtdCedAdd = int(str(replenishBankNotesQt.le_repor50.text()).isnumeric())
-    qtdCedFifty = qtdCedFifty + qtdCedAdd
-    saldo = saldo + (qtdCedAdd * 50)
-    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-    return quantidadeDeNotasQt.le_qtd50.setText(str(qtdCedFifty))
+    qtdCedAdd = int(replenishBankNotesQt.le_repor50.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        qtdCedFifty = qtdCedFifty + qtdCedAdd
+        saldo = saldo + (qtdCedAdd * 50)
+        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+        return quantidadeDeNotasQt.le_qtd50.setText(str(qtdCedFifty))
 
 
 def replenishOneHundred() -> str:
     global qtdCedOneHundred, saldo
-    qtdCedADD = int(str(replenishBankNotesQt.le_repor100.text()).isnumeric())
-    qtdCedOneHundred = qtdCedOneHundred + qtdCedADD
-    saldo = saldo + (qtdCedADD * 100)
-    quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-    return quantidadeDeNotasQt.le_qtd100.setText(str(qtdCedOneHundred))
+    qtdCedADD = int(replenishBankNotesQt.le_repor100.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        qtdCedOneHundred = qtdCedOneHundred + qtdCedADD
+        saldo = saldo + (qtdCedADD * 100)
+        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+        return quantidadeDeNotasQt.le_qtd100.setText(str(qtdCedOneHundred))
 
 
 def replenishTwoHundred() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
-    qtdCedADD = int(str(replenishBankNotesQt.le_repor200.text()).isnumeric())
-    if newCed1 == 200:
-        qtdnewCed1 = qtdnewCed1 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 200)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed1))
-    elif newCed2 == 200:
-        qtdnewCed2 = qtdnewCed2 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 200)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed2))
-    elif newCed3 == 200:
-        qtdnewCed3 = qtdnewCed3 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 200)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed3))
-    elif newCed4 == 200:
-        qtdnewCed4 = qtdnewCed4 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 200)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed4))
+    qtdCedADD = int(replenishBankNotesQt.le_repor200.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if newCed1 == 200:
+            qtdnewCed1 = qtdnewCed1 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 200)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed1))
+        elif newCed2 == 200:
+            qtdnewCed2 = qtdnewCed2 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 200)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed2))
+        elif newCed3 == 200:
+            qtdnewCed3 = qtdnewCed3 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 200)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed3))
+        elif newCed4 == 200:
+            qtdnewCed4 = qtdnewCed4 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 200)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd200.setText(str(qtdnewCed4))
 
 
 def replenishTwenty() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
-    qtdCedADD = int(str(replenishBankNotesQt.le_repor20.text()).isnumeric())
-    if newCed1 == 20:
-        qtdnewCed1 = qtdnewCed1 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 20)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed1))
-    elif newCed2 == 20:
-        qtdnewCed2 = qtdnewCed2 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 20)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed2))
-    elif newCed3 == 20:
-        qtdnewCed3 = qtdnewCed3 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 20)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed3))
-    elif newCed4 == 20:
-        qtdnewCed4 = qtdnewCed4 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 20)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed4))
+    qtdCedADD = int(replenishBankNotesQt.le_repor20.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if newCed1 == 20:
+            qtdnewCed1 = qtdnewCed1 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 20)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed1))
+        elif newCed2 == 20:
+            qtdnewCed2 = qtdnewCed2 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 20)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed2))
+        elif newCed3 == 20:
+            qtdnewCed3 = qtdnewCed3 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 20)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed3))
+        elif newCed4 == 20:
+            qtdnewCed4 = qtdnewCed4 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 20)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd20.setText(str(qtdnewCed4))
 
 
 def replenishTwo() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
-    qtdCedADD = int(str(replenishBankNotesQt.le_repor2.text()).isnumeric())
-    if newCed1 == 2:
-        qtdnewCed1 = qtdnewCed1 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 2)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed1))
-    elif newCed2 == 2:
-        qtdnewCed2 = qtdnewCed2 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 2)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed2))
-    elif newCed3 == 2:
-        qtdnewCed3 = qtdnewCed3 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 2)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed3))
-    elif newCed4 == 2:
-        qtdnewCed4 = qtdnewCed4 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 2)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed4))
+    qtdCedADD = int(replenishBankNotesQt.le_repor2.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if newCed1 == 2:
+            qtdnewCed1 = qtdnewCed1 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 2)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed1))
+        elif newCed2 == 2:
+            qtdnewCed2 = qtdnewCed2 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 2)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed2))
+        elif newCed3 == 2:
+            qtdnewCed3 = qtdnewCed3 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 2)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed3))
+        elif newCed4 == 2:
+            qtdnewCed4 = qtdnewCed4 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 2)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd2.setText(str(qtdnewCed4))
 
 
 def replenishFive() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
-    qtdCedADD = int(str(replenishBankNotesQt.le_repor5.text()).isnumeric())
-    if newCed1 == 5:
-        qtdnewCed1 = qtdnewCed1 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 5)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed1))
-    elif newCed2 == 5:
-        qtdnewCed2 = qtdnewCed2 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 5)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed2))
-    elif newCed3 == 5:
-        qtdnewCed3 = qtdnewCed3 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 5)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed3))
-    elif newCed4 == 5:
-        qtdnewCed4 = qtdnewCed4 + qtdCedADD
-        saldo = saldo + (qtdCedADD * 5)
-        quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
-        return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed4))
+    qtdCedADD = int(replenishBankNotesQt.le_repor5.text())
+    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    if isNumeric:
+        if newCed1 == 5:
+            qtdnewCed1 = qtdnewCed1 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 5)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed1))
+        elif newCed2 == 5:
+            qtdnewCed2 = qtdnewCed2 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 5)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed2))
+        elif newCed3 == 5:
+            qtdnewCed3 = qtdnewCed3 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 5)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed3))
+        elif newCed4 == 5:
+            qtdnewCed4 = qtdnewCed4 + qtdCedADD
+            saldo = saldo + (qtdCedADD * 5)
+            quantidadeDeNotasQt.le_totalSaldo.setText(str(saldo))
+            return quantidadeDeNotasQt.le_qtd5.setText(str(qtdnewCed4))
 
 
 # botões de funcionamento e conectados as suas funções.
