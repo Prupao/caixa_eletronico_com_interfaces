@@ -291,7 +291,7 @@ def main() -> None:
     global saldo, qtdCedTen, qtdCedFifty, qtdCedOneHundred, totced10, totced50, totced100
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     global totcedNew200, totcedNew20, totcedNew5, totcedNew2
-    if qtdCedTen >= 0 and qtdCedFifty >= 0 and qtdCedOneHundred >= 0 and newCed1 >= 0 and newCed2 >= 0 and newCed3 >= 0 and newCed4 >= 0:
+    if qtdCedTen >= 0 and qtdCedFifty >= 0 and qtdCedOneHundred >= 0 and qtdnewCed1 >= 0 and qtdnewCed2 >= 0 and qtdnewCed3 >= 0 and qtdnewCed4 >= 0:
         condicionalToDisplayPopUp()
         withdraw = saque()
         saldo = saldo - withdraw
