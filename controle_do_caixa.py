@@ -128,7 +128,7 @@ def saque() -> int:
     ced100 = 100
     ced10 = 10
     ced50 = 50
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(interface_do_caixaQt.le_digiteValor.text()).isnumeric()
     if isNumeric:
         if total >= 10 and withdrawValue <= saldo:
             while True:
@@ -303,7 +303,7 @@ def main() -> None:
             totcedNew20 = 0
             totcedNew5 = 0
             totcedNew2 = 0
-            if 0 < withdraw != 0:
+            if withdraw > 0:
                 interface_do_caixaQt.lcd_saldo.display(saldo)
                 quantidadeDeNotasQt.le_qtd10.setText(str(qtdCedTen))
                 quantidadeDeNotasQt.le_qtd50.setText(str(qtdCedFifty))
@@ -319,7 +319,7 @@ def main() -> None:
 def replenishTen() -> str:
     global qtdCedTen, saldo
     qtdCedAdd = int(replenishBankNotesQt.le_repor10.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor10.text()).isnumeric()
     if isNumeric:
         qtdCedTen = qtdCedTen + qtdCedAdd
         saldo = saldo + (qtdCedAdd * 10)
@@ -330,7 +330,7 @@ def replenishTen() -> str:
 def replenishFifty() -> str:
     global qtdCedFifty, saldo
     qtdCedAdd = int(replenishBankNotesQt.le_repor50.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor50.text()).isnumeric()
     if isNumeric:
         qtdCedFifty = qtdCedFifty + qtdCedAdd
         saldo = saldo + (qtdCedAdd * 50)
@@ -341,7 +341,7 @@ def replenishFifty() -> str:
 def replenishOneHundred() -> str:
     global qtdCedOneHundred, saldo
     qtdCedADD = int(replenishBankNotesQt.le_repor100.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor100.text()).isnumeric()
     if isNumeric:
         qtdCedOneHundred = qtdCedOneHundred + qtdCedADD
         saldo = saldo + (qtdCedADD * 100)
@@ -353,7 +353,7 @@ def replenishTwoHundred() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     qtdCedADD = int(replenishBankNotesQt.le_repor200.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor200.text()).isnumeric()
     if isNumeric:
         if newCed1 == 200:
             qtdnewCed1 = qtdnewCed1 + qtdCedADD
@@ -381,7 +381,7 @@ def replenishTwenty() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     qtdCedADD = int(replenishBankNotesQt.le_repor20.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor20.text()).isnumeric()
     if isNumeric:
         if newCed1 == 20:
             qtdnewCed1 = qtdnewCed1 + qtdCedADD
@@ -409,7 +409,7 @@ def replenishTwo() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     qtdCedADD = int(replenishBankNotesQt.le_repor2.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor2.text()).isnumeric()
     if isNumeric:
         if newCed1 == 2:
             qtdnewCed1 = qtdnewCed1 + qtdCedADD
@@ -437,7 +437,7 @@ def replenishFive() -> str:
     global saldo
     global newCed1, newCed2, newCed3, newCed4, saldo, qtdnewCed1, qtdnewCed2, qtdnewCed3, qtdnewCed4
     qtdCedADD = int(replenishBankNotesQt.le_repor5.text())
-    isNumeric = str(addCedulaQt.le_addCed.text()).isnumeric()
+    isNumeric = str(replenishBankNotesQt.le_repor5.text()).isnumeric()
     if isNumeric:
         if newCed1 == 5:
             qtdnewCed1 = qtdnewCed1 + qtdCedADD
