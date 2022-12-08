@@ -1,4 +1,4 @@
-from caixa_eletronico.make_new_ced_appear_on_QT.make_new_ced_appear_on_QT import *
+from make_new_ced_appear_on_QT.make_new_ced_appear_on_QT import *
 from funcoes_de_valores_predefinidos.funcoes_de_valores_predefinidos import *
 from controle_do_uso_das_novas_cedulas_no_QT.controle_do_uso_das_novas_cedulas_no_QT import *
 

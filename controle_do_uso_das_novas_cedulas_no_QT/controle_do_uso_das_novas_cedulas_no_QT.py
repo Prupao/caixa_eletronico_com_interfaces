@@ -1,4 +1,4 @@
-from caixa_eletronico.interfaces_e_modulos import *
+from interfaces_e_modulos import *
 
 
 # A função abaixo analisa qual o valor de cada cédula nova, e envia sua quantidade total para a interface.

@@ -1,4 +1,4 @@
-from caixa_eletronico.interfaces_e_modulos import *
+from interfaces_e_modulos import *
 
 
 # A função abaixo faz com que as cédulas novas adicionadas apareçam na interface

@@ -1,4 +1,4 @@
-from caixa_eletronico.interfaces_e_modulos import *
+from interfaces_e_modulos import *
 
 
 def centenas() -> int:
