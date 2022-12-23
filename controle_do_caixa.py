@@ -463,9 +463,9 @@ def replenishFive() -> str:
 
 # botões de funcionamento e conectados as suas funções.
 interface_do_caixaQt.pb_saqueValorDigitado.clicked.connect(main)
-interface_do_caixaQt.pb_100reais.clicked.connect(centenas)
-interface_do_caixaQt.pb_500reais.clicked.connect(quinhentos)
-interface_do_caixaQt.pb_1000reais.clicked.connect(mil)
+interface_do_caixaQt.pb_100reais.clicked.connect(lambda: valores(100))
+interface_do_caixaQt.pb_500reais.clicked.connect(lambda: valores(500))
+interface_do_caixaQt.pb_1000reais.clicked.connect(lambda: valores(1000))
 interface_do_caixaQt.pb_limpar.clicked.connect(clean)
 replenishBankNotesQt.pb_addCedula50.clicked.connect(replenishFifty)
 quantidadeDeNotasQt.pb_repor.clicked.connect(replenishBankNotesQt.show)
